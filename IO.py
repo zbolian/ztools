@@ -1,6 +1,13 @@
 import csv
+import ConfigParser
 
 class csvIO:
+
+    def parseConfigFile(fileName):
+        parser = ConfigParser.RawConfigParser()
+        parser.read(fileName)
+        return parser
+
     def importCsvFile(filename, retType, delimitChar=',', quoteCharacter='"'):
         if retType == "listOfDicts":
             returnData = []
